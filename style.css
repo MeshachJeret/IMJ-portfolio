@@ -23,13 +23,63 @@ body {
     background-size: 45px 45px;
 }
 
-/* Circuit-inspired navigation */
+
+/* Navigation bar */
 header {
     background-color: #101e35;
     border-bottom: 1px solid #287ba5;
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 100;
+    padding: 15px 30px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+nav a {
+    color: #e5f2ff;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 5px;
+}
+
+nav a:first-child {
+    font-weight: bold;
+    color: #65dfff;
+    font-size: 1.2rem;
+    margin-right: auto;
+}
+
+nav a:hover {
+    color: #ffbd69;
+}
+
+nav a:focus-visible {
+    outline: 2px solid #65dfff;
+    outline-offset: 3px;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+    header {
+        padding: 12px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav a:first-child {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+    }
 }
 
 /* Space-blue headings */
