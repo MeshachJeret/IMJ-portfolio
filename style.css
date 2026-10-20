@@ -1,0 +1,137 @@
+
+/* Space and technology colour theme */
+body {
+    margin: 0;
+    color: #e5f2ff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+
+    background-color: #081426;
+
+    /* Faint network-style grid */
+    background-image:
+        linear-gradient(
+            rgba(54, 139, 201, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(54, 139, 201, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 45px 45px;
+}
+
+/* Circuit-inspired navigation */
+header {
+    background-color: #101e35;
+    border-bottom: 1px solid #287ba5;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Space-blue headings */
+h1, h2 {
+    color: #65dfff;
+}
+
+/* Orange cable-inspired accent */
+h2 {
+    border-left: 4px solid #f4a340;
+    padding-left: 12px;
+}
+
+/* Technology-style links */
+a {
+    color: #65dfff;
+}
+
+a:hover {
+    color: #ffbd69;
+}
+
+/* Simple circuit-style content blocks */
+section {
+    border-bottom: 1px solid #234563;
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Hero section layout */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 65vh;
+}
+
+/* Introduction */
+.hero-text {
+    flex: 1;
+}
+
+.hero-label {
+    color: #f4a340;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+}
+
+.hero-text h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 10px;
+}
+
+.hero-text h2 {
+    font-size: 1.3rem;
+    color: #e5f2ff;
+    border: none;
+    padding: 0;
+}
+
+/* Illustration */
+.hero-picture {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-picture img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 18px;
+    border: 2px solid #287ba5;
+    box-shadow: 0 0 20px rgba(41, 151, 205, 0.2);
+}
+
+/* Project button */
+.hero-button {
+    display: inline-block;
+    background: #137da6;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 15px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.hero-button:hover {
+    background: #f4a340;
+    color: #081426;
+}
+
+/* Mobile and tablet layout */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .hero-picture img {
+        max-width: 280px;
+    }
+}
