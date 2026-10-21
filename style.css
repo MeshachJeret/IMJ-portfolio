@@ -229,6 +229,29 @@ section {
     }
 }
 
+/* Skilll kategori ikons*/
+.skill-card h3 span {
+    display: inline-block;
+    color: #ffac45;
+    font-size: 1.5rem;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+/*small hover effect*/
+.skill-card:hover h3 span {
+    color: #65dfff;
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skill-card:hover h3 span {
+        transform: none;
+        transition: none;
+    }
+}
+
 /* Mobile and tablet layout */
 @media (max-width: 768px) {
     .hero {
