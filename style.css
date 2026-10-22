@@ -262,5 +262,37 @@ section {
 
     .hero-picture img {
         max-width: 280px;
+
+    }
+    /* Logo only */
+.brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+.brand:hover .nav-logo {
+    opacity: 0.8;
+}
+
+.brand:focus-visible {
+    outline: 2px solid #65dfff;
+    outline-offset: 4px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .nav-logo {
+        width: 50px;
+        height: 50px;
     }
 }
+}
+
