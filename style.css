@@ -310,4 +310,73 @@ header nav {
 }
 
 
+/* My Journey timeline */
+.journey-timeline {
+    position: relative;
+    margin-top: 30px;
+    padding-left: 35px;
+    border-left: 2px solid #287ba5;
+}
+
+.journey-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.journey-dot {
+    position: absolute;
+    left: -44px;
+    top: 25px;
+    width: 14px;
+    height: 14px;
+    background: #65dfff;
+    border: 3px solid #081426;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #287ba5;
+}
+
+.journey-card {
+    background: #101e35;
+    border: 1px solid #287ba5;
+    border-left: 3px solid #f4a340;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.journey-card h4 {
+    color: #65dfff;
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+.journey-card p {
+    margin: 8px 0;
+}
+
+.journey-date {
+    color: #ffbd69;
+    font-size: 0.9rem;
+}
+
+.journey-card:hover {
+    border-color: #65dfff;
+    background: #142a45;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .journey-timeline {
+        padding-left: 25px;
+    }
+
+    .journey-dot {
+        left: -34px;
+    }
+
+    .journey-card {
+        padding: 15px;
+    }
+}
+
+
 
