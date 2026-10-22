@@ -382,3 +382,23 @@ html {
     scroll-padding-top: 110px;
 }
 
+
+/* Work Experience section */
+.work-experience {
+    margin-top: 65px;
+}
+
+.work-experience h3 {
+    color: #65dfff;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.work-experience > p {
+    margin-bottom: 25px;
+}
+
+/* Work experience card hover */
+.work-experience .journey-card:hover {
+    border-color: #f4a340;
+}
