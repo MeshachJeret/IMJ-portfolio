@@ -402,3 +402,44 @@ html {
 .work-experience .journey-card:hover {
     border-color: #f4a340;
 }
+
+
+/* Vibrant headings for My Journey */
+#journey h3 {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        90deg,
+        #65dfff,
+        #42baff,
+        #ffac45
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: 0 0 20px rgba(101, 223, 255, 0.18);
+    margin-bottom: 20px;
+}
+
+/* Small glowing underline */
+#journey h3::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 3px;
+    margin-top: 8px;
+    border-radius: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #65dfff,
+        #ffac45
+    );
+
+    box-shadow: 0 0 10px rgba(101, 223, 255, 0.5);
+}
