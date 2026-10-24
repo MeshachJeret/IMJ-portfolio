@@ -396,12 +396,18 @@ const skillData = {
             "and experimented with geometric objects, " +
             "materials, lighting, and scene composition.",
 
-        images: [
-            {
-                src: "Assets/blender-table.png",
-                caption: "My table model and Blender experiments"
-            }
-        ]
+
+images: [
+    {
+        src: "Assets/pic7.png",
+        caption: "Blender modelling view - table and geometric experiments"
+    },
+    {
+        src: "Assets/pic8.png",
+        caption: "Blender rendered view - materials and lighting"
+    }
+]
+
     }
 };
 
