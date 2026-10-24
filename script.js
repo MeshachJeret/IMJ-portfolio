@@ -93,31 +93,19 @@ backToTop.addEventListener("click", function() {
 }
 
 
-/* Network Navigation Menu */
+
+/*  navigation menu */
 
 const menuToggle = document.getElementById("menu-toggle");
 const navLinks = document.getElementById("nav-links");
 
 if (menuToggle && navLinks) {
 
-    // Function to close the network menu
-    function closeMenu() {
-        navLinks.classList.remove("open");
-
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute(
-            "aria-label", "Open navigation menu"
-        );
-    }
-
-    // Open and close when clicking the network icon
     menuToggle.addEventListener("click", function() {
 
         const isOpen = navLinks.classList.toggle("open");
 
-        menuToggle.setAttribute(
-            "aria-expanded", String(isOpen)
-        );
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
 
         menuToggle.setAttribute(
             "aria-label",
@@ -125,27 +113,19 @@ if (menuToggle && navLinks) {
         );
     });
 
-    // Close when selecting a section
+    // Close menu after selecting a section
     navLinks.querySelectorAll("a").forEach(function(link) {
-        link.addEventListener("click", closeMenu);
+
+        link.addEventListener("click", function() {
+
+            navLinks.classList.remove("open");
+
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+        });
     });
 
-    // Close when pressing Escape
-    document.addEventListener("keydown", function(event) {
-
-        if (event.key === "Escape" &&
-            navLinks.classList.contains("open")) {
-
-            closeMenu();
-            menuToggle.focus();
-        }
-    });
-
-    // Reset when switching to desktop
-    window.addEventListener("resize", function() {
-
-        if (window.innerWidth > 768) {
-            closeMenu();
-        }
-    });
 }
