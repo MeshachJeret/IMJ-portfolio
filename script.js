@@ -200,7 +200,7 @@ if ("IntersectionObserver" in window) {
 
         },
         {
-            threshold: 0.1
+            threshold: 0.25
         }
     );
 
