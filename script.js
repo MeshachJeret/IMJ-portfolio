@@ -66,15 +66,28 @@ if (backToTop) {
 
     checkScroll();
 
-    backToTop.addEventListener("click", function() {
 
-        const reducedMotion = window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
+backToTop.addEventListener("click", function() {
 
-        window.scrollTo({
-            top: 0,
-            behavior: reducedMotion ? "instant" : "smooth"
-        });
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (!reducedMotion) {
+        backToTop.classList.add("launch");
+    }
+
+    window.scrollTo({
+        top: 0,
+        behavior: reducedMotion ? "instant" : "smooth"
     });
+
+    // Reset animation for the next click
+    if (!reducedMotion) {
+        setTimeout(function() {
+            backToTop.classList.remove("launch");
+        }, 650);
+    }
+});
+
 }
