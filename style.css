@@ -803,3 +803,26 @@ header nav .nav-links a:focus-visible,
     }
 }
 
+
+/* Highlight the current section in network navigation */
+
+header nav .nav-links a.active {
+    color: #65dfff;
+    background: #173b59;
+    border-left: 3px solid #ffac45;
+    font-weight: bold;
+}
+
+/* Small transition between sections */
+header nav .nav-links a {
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    header nav .nav-links a {
+        transition: none;
+    }
+}
+
+
