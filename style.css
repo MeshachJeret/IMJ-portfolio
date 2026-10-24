@@ -656,3 +656,63 @@ html {
         transition: none !important;
     }
 }
+
+
+/* Network menu icon */
+.network-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    fill: #65dfff;
+    transition: transform 0.3s ease;
+}
+
+/* Connecting wires */
+.network-lines {
+    fill: none;
+    stroke: #65dfff;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+/* Central network node */
+.network-core {
+    fill: #ffac45;
+}
+
+/* Hover animation */
+.menu-toggle:hover .network-icon {
+    transform: rotate(15deg);
+}
+
+/* Active network */
+.menu-toggle[aria-expanded="true"] {
+    border-color: #ffac45;
+    background: #173b59;
+}
+
+.menu-toggle[aria-expanded="true"] .network-icon {
+    transform: rotate(45deg);
+    fill: #ffac45;
+}
+
+.menu-toggle[aria-expanded="true"] .network-lines {
+    stroke: #ffac45;
+}
+
+.menu-toggle[aria-expanded="true"] .network-core {
+    fill: #65dfff;
+}
+
+/* Keyboard focus */
+.menu-toggle:focus-visible {
+    outline: 3px solid #ffac45;
+    outline-offset: 4px;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .network-icon {
+        transition: none;
+    }
+}
