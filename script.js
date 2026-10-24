@@ -44,3 +44,37 @@ if (contactForm) {
         window.location.href = mailLink;
     });
 }
+
+
+/* Rocket back-to-top button */
+
+const backToTop = document.getElementById("back-to-top");
+
+if (backToTop) {
+
+    function checkScroll() {
+        if (window.scrollY > 300) {
+            backToTop.classList.add("show");
+        } else {
+            backToTop.classList.remove("show");
+        }
+    }
+
+    window.addEventListener("scroll", checkScroll, {
+        passive: true
+    });
+
+    checkScroll();
+
+    backToTop.addEventListener("click", function() {
+
+        const reducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        window.scrollTo({
+            top: 0,
+            behavior: reducedMotion ? "instant" : "smooth"
+        });
+    });
+}
