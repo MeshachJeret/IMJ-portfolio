@@ -718,51 +718,86 @@ html {
 }
 
 
-/* Network navigation button */
+
+/* Network navigation - Desktop and Mobile */
+
+header nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+/* Network menu button */
 .menu-toggle {
-    display: none;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 48px;
     height: 48px;
+    margin-left: auto;
     background: #101e35;
     border: 1px solid #287ba5;
     border-radius: 10px;
     cursor: pointer;
 }
 
-/* Navigation links */
-.nav-links {
+/* Navigation hidden by default */
+header nav .nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    width: min(260px, 85vw);
+    padding: 12px;
+    box-sizing: border-box;
+    background: #101e35;
+    border: 1px solid #287ba5;
+    border-radius: 12px;
+    z-index: 200;
+}
+
+/* Show navigation when clicked */
+header nav .nav-links.open {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
 }
 
-/* Mobile network menu */
-@media (max-width: 768px) {
-    header nav {
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
+/* Navigation links */
+header nav .nav-links a {
+    display: block;
+    padding: 12px 15px;
+    text-align: left;
+    color: #e5f2ff;
+    text-decoration: none;
+    border-radius: 6px;
+}
 
+/* Hover effect */
+header nav .nav-links a:hover {
+    background: #173b59;
+    color: #65dfff;
+}
+
+/* Keyboard accessibility */
+header nav .nav-links a:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 2px solid #65dfff;
+    outline-offset: 3px;
+}
+
+/* Smaller mobile screens */
+@media (max-width: 600px) {
     .menu-toggle {
-        display: inline-flex;
+        width: 44px;
+        height: 44px;
     }
 
-    .nav-links {
-        display: none;
-        width: 100%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-    }
-
-    .nav-links.open {
-        display: flex;
-    }
-
-    .nav-links a {
-        text-align: center;
-        padding: 12px;
+    header nav .nav-links {
+        width: min(240px, 85vw);
     }
 }
+
