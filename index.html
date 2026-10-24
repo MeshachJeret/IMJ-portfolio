@@ -146,36 +146,104 @@
 
     <div class="skills-grid">
 
-        <div class="skill-card">
+        <button class="skill-card skill-select"
+                type="button"
+                data-skill="programming"
+                aria-expanded="false"
+                aria-controls="skill-details">
             <h3><span aria-hidden="true">⌨</span> Programming</h3>
             <p>C, C++, Java, Python, SQL</p>
-        </div>
+            <span class="skill-action">Explore skill →</span>
+        </button>
 
-        <div class="skill-card">
+        <button class="skill-card skill-select"
+                type="button"
+                data-skill="systems"
+                aria-expanded="false"
+                aria-controls="skill-details">
             <h3><span aria-hidden="true">▣</span> Operating Systems</h3>
             <p>Debian Linux, Ubuntu, Windows</p>
-        </div>
+            <span class="skill-action">Explore skill →</span>
+        </button>
 
-        <div class="skill-card">
+        <button class="skill-card skill-select"
+                type="button"
+                data-skill="networking"
+                aria-expanded="false"
+                aria-controls="skill-details">
             <h3><span aria-hidden="true">◎</span> Networking</h3>
             <p>
                 SSH, Network Configuration,
                 Syncthing, Server Setup,
                 Cisco Packet Tracer
             </p>
-        </div>
+            <span class="skill-action">Explore skill →</span>
+        </button>
 
-        <div class="skill-card">
+        <button class="skill-card skill-select"
+                type="button"
+                data-skill="tools"
+                aria-expanded="false"
+                aria-controls="skill-details">
             <h3><span aria-hidden="true">⚙</span> Development Tools</h3>
             <p>
-                GitHub, VSCodium,
-                VS Code, Oracle VirtualBox, Antigravity
+                GitHub, VSCodium, VS Code,
+                Oracle VirtualBox, Antigravity
             </p>
+            <span class="skill-action">Explore skill →</span>
+        </button>
+
+        <button class="skill-card skill-select"
+                type="button"
+                data-skill="hardware"
+                aria-expanded="false"
+                aria-controls="skill-details">
+            <h3><span aria-hidden="true">🔧</span> Computer Hardware</h3>
+            <p>
+                HDD Installation, CPU Cooling,
+                Computer Maintenance
+            </p>
+            <span class="skill-action">Explore skill →</span>
+        </button>
+
+        <button class="skill-card skill-select"
+                type="button"
+                data-skill="blender"
+                aria-expanded="false"
+                aria-controls="skill-details">
+            <h3><span aria-hidden="true">◈</span> 3D Modelling</h3>
+            <p>
+                Blender, Basic 3D Modelling,
+                Materials and Experimentation
+            </p>
+            <span class="skill-action">Explore skill →</span>
+        </button>
+
+    </div>
+
+    <!-- Large expandable skill panel -->
+    <div id="skill-details" class="skill-details" hidden>
+
+        <div class="skill-details-header">
+            <div>
+                <p class="skill-panel-label">SKILL EXPLORER</p>
+                <h3 id="skill-detail-title"></h3>
+            </div>
+
+            <button id="close-skill"
+                    class="close-skill"
+                    type="button"
+                    aria-label="Close skill details">
+                ×
+            </button>
         </div>
+
+        <p id="skill-detail-description"></p>
+
+        <div id="skill-images" class="skill-images"></div>
 
     </div>
 </section>
-
 
             <section id="projects">
                 <h2>My Projects</h2>
