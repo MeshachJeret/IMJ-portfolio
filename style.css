@@ -874,3 +874,203 @@ header nav .nav-links a {
     pointer-events: none;
 }
 
+/* =========================================
+   INTERACTIVE SKILLS SECTION
+   ========================================= */
+
+/* Make existing skill cards clickable */
+.skill-select {
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: #e5f2ff;
+    font: inherit;
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Skill card hover */
+.skill-select:hover {
+    background: #173b59;
+    border-color: #65dfff;
+    transform: translateY(-4px);
+}
+
+/* Selected skill card */
+.skill-select.active-skill {
+    background: #173b59;
+    border-color: #65dfff;
+    box-shadow: 0 0 15px rgba(101, 223, 255, 0.15);
+}
+
+/* Explore text */
+.skill-action {
+    display: inline-block;
+    margin-top: 12px;
+    color: #ffac45;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Keyboard accessibility */
+.skill-select:focus-visible {
+    outline: 3px solid #65dfff;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   LARGE SKILL DETAILS PANEL
+   ========================================= */
+
+.skill-details {
+    margin-top: 30px;
+    padding: 25px;
+
+    background: #101e35;
+    border: 1px solid #287ba5;
+    border-left: 4px solid #ffac45;
+    border-radius: 14px;
+
+    box-shadow: 0 0 25px rgba(101, 223, 255, 0.08);
+}
+
+/* Keep the panel hidden when closed */
+.skill-details[hidden] {
+    display: none;
+}
+
+/* Panel heading layout */
+.skill-details-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.skill-panel-label {
+    color: #ffac45;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin: 0 0 8px;
+}
+
+.skill-details h3 {
+    color: #65dfff;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Close button */
+.close-skill {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+
+    background: #173b59;
+    border: 1px solid #287ba5;
+    border-radius: 8px;
+
+    color: #65dfff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.close-skill:hover {
+    background: #287ba5;
+    color: white;
+}
+
+.close-skill:focus-visible {
+    outline: 3px solid #ffac45;
+    outline-offset: 3px;
+}
+
+/* Description */
+#skill-detail-description {
+    margin: 18px 0 22px;
+    color: #e5f2ff;
+    line-height: 1.8;
+}
+
+/* Image gallery */
+.skill-images {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 240px), 1fr)
+    );
+    gap: 20px;
+}
+
+/* Individual image container */
+.skill-image-item {
+    margin: 0;
+    padding: 12px;
+
+    background: #081426;
+    border: 1px solid #287ba5;
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+/* Real screenshots and photos */
+.skill-image-item img {
+    display: block;
+    width: 100%;
+    height: 260px;
+
+    object-fit: contain;
+    border-radius: 6px;
+
+    background: #07111e;
+}
+
+/* Image captions */
+.skill-image-item figcaption {
+    margin-top: 12px;
+    color: #b9cbdc;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+
+    .skill-details {
+        padding: 15px;
+    }
+
+    .skill-details h3 {
+        font-size: 1.2rem;
+    }
+
+    .skill-images {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-image-item img {
+        height: auto;
+        max-height: 340px;
+    }
+
+    .skill-select:hover {
+        transform: none;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .skill-select {
+        transition: none;
+    }
+
+    .skill-select:hover {
+        transform: none;
+    }
+}
+
