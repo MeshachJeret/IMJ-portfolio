@@ -534,3 +534,9 @@ html {
 }
 
 
+/* Make only the left contact card shorter */
+.contact-info {
+    align-self: start;
+    height: fit-content;
+}
+
