@@ -491,8 +491,34 @@ if (
 
             });
 
-            /* Display the panel */
-            skillDetails.hidden = false;
+           
+/* Display the panel */
+skillDetails.hidden = false;
+
+/* Move the panel directly after the selected row */
+
+const skillsGrid = document.querySelector(".skills-grid");
+
+if (skillsGrid) {
+
+    const columns = window.matchMedia(
+        "(max-width: 768px)"
+    ).matches ? 1 : 2;
+
+    const buttons = Array.from(skillButtons);
+    const selectedIndex = buttons.indexOf(button);
+
+    const lastIndexInRow = Math.min(
+        Math.floor(selectedIndex / columns) * columns
+            + columns - 1,
+        buttons.length - 1
+    );
+
+    buttons[lastIndexInRow].insertAdjacentElement(
+        "afterend",
+        skillDetails
+    );
+}
 
         });
 
