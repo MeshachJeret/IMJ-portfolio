@@ -716,3 +716,53 @@ html {
         transition: none;
     }
 }
+
+
+/* Network navigation button */
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: #101e35;
+    border: 1px solid #287ba5;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Navigation links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Mobile network menu */
+@media (max-width: 768px) {
+    header nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        text-align: center;
+        padding: 12px;
+    }
+}
