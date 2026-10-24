@@ -191,10 +191,15 @@ if ("IntersectionObserver" in window) {
 
             entries.forEach(function(entry) {
 
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
-                }
+               
+if (entry.isIntersecting) {
+    // Reveal the element when it enters the screen
+    entry.target.classList.add("visible");
+} else {
+    // Hide it again when it leaves the screen
+    entry.target.classList.remove("visible");
+}
+
 
             });
 
