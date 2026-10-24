@@ -852,3 +852,25 @@ header nav .nav-links a {
 }
 
 
+/* Scroll progress indicator */
+
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #65dfff,
+        #42baff,
+        #ffac45
+    );
+
+    box-shadow: 0 0 12px rgba(101, 223, 255, 0.6);
+
+    z-index: 1000;
+    pointer-events: none;
+}
+
