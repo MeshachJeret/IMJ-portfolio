@@ -129,3 +129,51 @@ if (menuToggle && navLinks) {
     });
 
 }
+
+
+/* Active section indicator */
+
+const sections = document.querySelectorAll("main section[id]");
+const navigationLinks = document.querySelectorAll(
+    "#nav-links a"
+);
+
+function updateActiveSection() {
+
+    let currentSection = "";
+
+    sections.forEach(function(section) {
+
+        const sectionTop =
+            section.getBoundingClientRect().top;
+
+        if (sectionTop <= 180) {
+            currentSection = section.id;
+        }
+
+    });
+
+    navigationLinks.forEach(function(link) {
+
+        const linkSection = link.getAttribute("href");
+
+        if (linkSection === "#" + currentSection) {
+            link.classList.add("active");
+            link.setAttribute("aria-current", "location");
+        } else {
+            link.classList.remove("active");
+            link.removeAttribute("aria-current");
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", updateActiveSection, {
+    passive: true
+});
+
+window.addEventListener("resize", updateActiveSection);
+
+updateActiveSection();
+
