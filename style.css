@@ -541,55 +541,118 @@ html {
 }
 
 
-/* Rocket back-to-top button */
+
+/* Modern rocket button */
 #back-to-top {
     position: fixed;
     bottom: 25px;
     right: 25px;
     z-index: 200;
 
-    background: #101e35;
-    color: #65dfff;
-    border: 2px solid #65dfff;
-    border-radius: 50%;
+    width: 65px;
+    height: 65px;
 
-    width: 55px;
-    height: 55px;
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(16, 30, 53, 0.85);
+    backdrop-filter: blur(10px);
+
+    border: 2px solid #65dfff;
+    border-radius: 20px;
+
+    color: white;
     cursor: pointer;
 
-    box-shadow: 0 0 15px rgba(101, 223, 255, 0.3);
+    box-shadow:
+        0 0 15px rgba(101, 223, 255, 0.25),
+        inset 0 0 12px rgba(101, 223, 255, 0.08);
 
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s, transform 0.3s,
-                visibility 0.3s;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
 }
 
-/* Visible when scrolling */
+/* Show after scrolling */
 #back-to-top.show {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
 
-#back-to-top:hover {
-    background: #137da6;
-    transform: translateY(-5px);
+/* Rocket icon */
+.rocket-icon {
+    font-size: 2rem;
+    display: inline-block;
+    animation: rocketFloat 2.5s ease-in-out infinite;
 }
 
+/* Gentle floating animation */
+@keyframes rocketFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Hover effect */
+#back-to-top:hover {
+    background: #173b59;
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(101, 223, 255, 0.5);
+}
+
+/* Rocket launch animation */
+#back-to-top.launch .rocket-icon {
+    animation: rocketLaunch 0.6s ease-in forwards;
+}
+
+@keyframes rocketLaunch {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-35px) scale(0.6);
+        opacity: 0;
+    }
+}
+
+/* Keyboard focus */
 #back-to-top:focus-visible {
     outline: 3px solid #ffac45;
     outline-offset: 4px;
 }
 
-@media (prefers-reduced-motion: reduce) {
+/* Mobile size */
+@media (max-width: 600px) {
     #back-to-top {
-        transition: none;
+        width: 52px;
+        height: 52px;
+        right: 15px;
+        bottom: 15px;
     }
 
-    #back-to-top:hover {
-        transform: none;
+    .rocket-icon {
+        font-size: 1.6rem;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    #back-to-top,
+    .rocket-icon {
+        animation: none !important;
+        transition: none !important;
     }
 }
