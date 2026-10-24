@@ -177,3 +177,43 @@ window.addEventListener("resize", updateActiveSection);
 
 updateActiveSection();
 
+
+/* Scroll reveal animation */
+
+const revealElements = document.querySelectorAll(
+    "#about, .skill-card, .journey-item, .contact-info, .contact-form-box"
+);
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver(
+        function(entries, observer) {
+
+            entries.forEach(function(entry) {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.1
+        }
+    );
+
+    revealElements.forEach(function(element) {
+        element.classList.add("reveal");
+        revealObserver.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach(function(element) {
+        element.classList.add("visible");
+    });
+
+}
+
