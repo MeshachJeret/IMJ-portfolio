@@ -267,3 +267,246 @@ if (scrollProgress) {
     updateScrollProgress();
 }
 
+
+/* =========================================
+   INTERACTIVE SKILL EXPLORER
+   ========================================= */
+
+const skillButtons = document.querySelectorAll(".skill-select");
+
+const skillDetails = document.getElementById("skill-details");
+const skillTitle = document.getElementById("skill-detail-title");
+const skillDescription = document.getElementById(
+    "skill-detail-description"
+);
+const skillImages = document.getElementById("skill-images");
+const closeSkill = document.getElementById("close-skill");
+
+/* Skill information and real images */
+
+const skillData = {
+
+    programming: {
+        title: "Programming",
+
+        description:
+            "I have learned and practiced C, C++, Java, " +
+            "Python, and SQL through university coursework " +
+            "and personal learning. I also explore AI-assisted " +
+            "development tools while learning programming.",
+
+        images: [
+            {
+                src: "Assets/pic5.png",
+                caption: "Programming work using Antigravity"
+            }
+        ]
+    },
+
+    systems: {
+        title: "Operating Systems",
+
+        description:
+            "I have explored Debian Linux, Ubuntu, and " +
+            "Windows. My practical experience includes " +
+            "installing and configuring operating systems, " +
+            "experimenting with Linux desktop environments, " +
+            "and maintaining an older desktop computer.",
+
+        images: [
+            {
+                src: "Assets/pic3.jpeg",
+                caption: "My Debian 13 Linux environment"
+            }
+        ]
+    },
+
+    networking: {
+        title: "Networking",
+
+        description:
+            "I have gained hands-on experience with SSH, " +
+            "network configuration, Syncthing, and basic " +
+            "server administration. I configured file " +
+            "synchronisation between my Debian computer " +
+            "and Windows laptop.",
+
+        images: [
+            {
+                src: "Assets/pic1.png",
+                caption: "Syncthing file synchronisation setup"
+            }
+        ]
+    },
+
+    tools: {
+        title: "Development Tools",
+
+        description:
+            "I use and explore development tools such as " +
+            "VSCodium, Visual Studio Code, GitHub, " +
+            "Oracle VirtualBox, and Antigravity. " +
+            "These tools support my coursework, coding, " +
+            "virtualisation, and personal experiments.",
+
+        images: [
+            {
+                src: "Assets/pic2.jpg",
+                caption: "VSCodium"
+            },
+            {
+                src: "Assets/pic4.png",
+                caption: "Virtual machine environment"
+            },
+            {
+                src: "Assets/pic6.png",
+                caption: "Visual Studio Code"
+            }
+        ]
+    },
+
+    hardware: {
+        title: "Computer Hardware & Maintenance",
+
+        description:
+            "I enjoy working with computer hardware. " +
+            "My hands-on experience includes installing " +
+            "hard disk drives, working with SATA connections, " +
+            "replacing CPU cooling fans, and maintaining " +
+            "an older desktop computer.",
+
+        images: [
+            {
+                src: "Assets/hardware1.jpg",
+                caption: "Hard disk drive and SATA connections"
+            },
+            {
+                src: "Assets/hardware2.jpg",
+                caption: "Intel CPU cooler and motherboard"
+            }
+        ]
+    },
+
+    blender: {
+        title: "3D Modelling & Creative Tools",
+
+        description:
+            "I have explored basic 3D modelling using " +
+            "Blender. I created a simple table model " +
+            "and experimented with geometric objects, " +
+            "materials, lighting, and scene composition.",
+
+        images: [
+            {
+                src: "Assets/blender-table.png",
+                caption: "My table model and Blender experiments"
+            }
+        ]
+    }
+};
+
+/* Open and update the large skill panel */
+
+if (
+    skillButtons.length > 0 &&
+    skillDetails &&
+    skillTitle &&
+    skillDescription &&
+    skillImages &&
+    closeSkill
+) {
+
+    function resetSkillButtons() {
+
+        skillButtons.forEach(function(button) {
+            button.classList.remove("active-skill");
+            button.setAttribute("aria-expanded", "false");
+        });
+
+    }
+
+    function closeSkillPanel() {
+
+        skillDetails.hidden = true;
+        resetSkillButtons();
+
+    }
+
+    skillButtons.forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            const selectedSkill = button.dataset.skill;
+            const data = skillData[selectedSkill];
+
+            if (!data) {
+                return;
+            }
+
+            /* Clicking the same card closes the panel */
+            if (
+                !skillDetails.hidden &&
+                button.classList.contains("active-skill")
+            ) {
+                closeSkillPanel();
+                return;
+            }
+
+            resetSkillButtons();
+
+            button.classList.add("active-skill");
+            button.setAttribute("aria-expanded", "true");
+
+            /* Update heading and description */
+            skillTitle.textContent = data.title;
+            skillDescription.textContent = data.description;
+
+            /* Remove images from the previous skill */
+            skillImages.replaceChildren();
+
+            /* Add the selected skill's real images */
+            data.images.forEach(function(imageData) {
+
+                const figure = document.createElement("figure");
+                figure.className = "skill-image-item";
+
+                const image = document.createElement("img");
+                image.src = imageData.src;
+                image.alt = imageData.caption;
+                image.loading = "lazy";
+
+                const caption = document.createElement("figcaption");
+                caption.textContent = imageData.caption;
+
+                figure.appendChild(image);
+                figure.appendChild(caption);
+
+                skillImages.appendChild(figure);
+
+            });
+
+            /* Display the panel */
+            skillDetails.hidden = false;
+
+        });
+
+    });
+
+    /* Close panel button */
+    closeSkill.addEventListener("click", function() {
+
+        const activeButton = document.querySelector(
+            ".skill-select.active-skill"
+        );
+
+        closeSkillPanel();
+
+        if (activeButton) {
+            activeButton.focus();
+        }
+
+    });
+
+}
+
+
