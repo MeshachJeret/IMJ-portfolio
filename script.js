@@ -542,3 +542,103 @@ if (skillsGrid) {
 }
 
 
+/* =========================================
+   SKILL IMAGE LIGHTBOX
+   ========================================= */
+
+const imageLightbox = document.getElementById("image-lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxCaption = document.getElementById("lightbox-caption");
+const closeLightboxButton = document.getElementById("close-lightbox");
+
+if (
+    imageLightbox &&
+    lightboxImage &&
+    lightboxCaption &&
+    closeLightboxButton
+) {
+
+    let previousFocus = null;
+
+    function openImageLightbox(image) {
+
+        previousFocus = document.activeElement;
+
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+
+        const caption = image.closest("figure")
+            ?.querySelector("figcaption");
+
+        lightboxCaption.textContent =
+            caption ? caption.textContent : image.alt;
+
+        imageLightbox.hidden = false;
+
+        document.body.style.overflow = "hidden";
+
+        closeLightboxButton.focus();
+    }
+
+    function closeImageLightbox() {
+
+        imageLightbox.hidden = true;
+        lightboxImage.removeAttribute("src");
+
+        document.body.style.overflow = "";
+
+        if (previousFocus && previousFocus.isConnected) {
+            previousFocus.focus();
+        }
+    }
+
+    /* Event delegation for dynamically created images */
+    document.addEventListener("click", function(event) {
+
+        const image = event.target.closest(
+            ".skill-image-item img"
+        );
+
+        if (image) {
+            openImageLightbox(image);
+        }
+
+    });
+
+    /* Keyboard support */
+    document.addEventListener("keydown", function(event) {
+
+        if (imageLightbox.hidden) {
+            return;
+        }
+
+        if (event.key === "Escape") {
+            closeImageLightbox();
+        }
+
+        if (event.key === "Tab") {
+            event.preventDefault();
+            closeLightboxButton.focus();
+        }
+
+    });
+
+    /* Close button */
+    closeLightboxButton.addEventListener(
+        "click",
+        closeImageLightbox
+    );
+
+    /* Click outside image to close */
+    imageLightbox.addEventListener("click", function(event) {
+
+        if (event.target === imageLightbox) {
+            closeImageLightbox();
+        }
+
+    });
+
+}
+
+
+
