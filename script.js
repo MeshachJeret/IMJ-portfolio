@@ -480,6 +480,13 @@ if (
                 image.src = imageData.src;
                 image.alt = imageData.caption;
                 image.loading = "lazy";
+                image.tabIndex = 0;
+                image.setAttribute("role", "button");
+                image.setAttribute(
+                     "aria-label",
+                     "Enlarge image: " + imageData.caption
+                 );
+
 
                 const caption = document.createElement("figcaption");
                 caption.textContent = imageData.caption;
@@ -638,6 +645,26 @@ if (
 
     });
 
+    
+document.addEventListener("keydown", function(event) {
+
+    if (
+        event.key !== "Enter" &&
+        event.key !== " "
+    ) {
+        return;
+    }
+
+    const image = event.target.closest(
+        ".skill-image-item img"
+    );
+
+    if (image && imageLightbox.hidden) {
+        event.preventDefault();
+        openImageLightbox(image);
+    }
+
+});
 }
 
 
