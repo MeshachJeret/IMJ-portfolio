@@ -34,7 +34,7 @@ if (contactForm) {
         );
 
         const mailLink =
-            "mailto:immannotlimitjeret@gmail.com" +
+            "mailto:popeyenet26@gmail.com" +
             "?subject=" + subject +
             "&body=" + body;
 
@@ -90,4 +90,62 @@ backToTop.addEventListener("click", function() {
     }
 });
 
+}
+
+
+/* Network Navigation Menu */
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if (menuToggle && navLinks) {
+
+    // Function to close the network menu
+    function closeMenu() {
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute(
+            "aria-label", "Open navigation menu"
+        );
+    }
+
+    // Open and close when clicking the network icon
+    menuToggle.addEventListener("click", function() {
+
+        const isOpen = navLinks.classList.toggle("open");
+
+        menuToggle.setAttribute(
+            "aria-expanded", String(isOpen)
+        );
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
+        );
+    });
+
+    // Close when selecting a section
+    navLinks.querySelectorAll("a").forEach(function(link) {
+        link.addEventListener("click", closeMenu);
+    });
+
+    // Close when pressing Escape
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "Escape" &&
+            navLinks.classList.contains("open")) {
+
+            closeMenu();
+            menuToggle.focus();
+        }
+    });
+
+    // Reset when switching to desktop
+    window.addEventListener("resize", function() {
+
+        if (window.innerWidth > 768) {
+            closeMenu();
+        }
+    });
 }
