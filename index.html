@@ -21,9 +21,38 @@
                 class="nav-logo"
             >
         </a>
+     
+         <!-- NEW Network Menu Button -->
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="nav-links">
 
-                
-          <div class="nav-links">
+            <svg class="network-icon"
+                 viewBox="0 0 40 40"
+                 aria-hidden="true"
+                 focusable="false">
+
+                <path class="network-lines"
+                      d="M8 9 L30 8 L33 29 L12 32 Z
+                         M8 9 L33 29
+                         M30 8 L12 32"/>
+
+                <circle cx="8" cy="9" r="4"/>
+                <circle cx="30" cy="8" r="4"/>
+                <circle cx="33" cy="29" r="4"/>
+                <circle cx="12" cy="32" r="4"/>
+
+                <circle class="network-core"
+                        cx="20" cy="20" r="4"/>
+            </svg>
+        </button>
+
+        <!-- Keep your navigation links -->
+        <div class="nav-links" id="nav-links">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
