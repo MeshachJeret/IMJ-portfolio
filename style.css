@@ -1091,3 +1091,101 @@ header nav .nav-links a {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* =========================================
+   SKILL IMAGE LIGHTBOX
+   ========================================= */
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 65px 20px 25px;
+    box-sizing: border-box;
+
+    background: rgba(3, 10, 22, 0.96);
+}
+
+/* Respect the hidden attribute */
+.image-lightbox[hidden] {
+    display: none;
+}
+
+/* Enlarged image */
+#lightbox-image {
+    display: block;
+    max-width: 95%;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    border: 1px solid #287ba5;
+    border-radius: 10px;
+}
+
+/* Image caption */
+#lightbox-caption {
+    color: #e5f2ff;
+    text-align: center;
+    margin: 0;
+}
+
+/* Close button */
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    background: #101e35;
+    color: #65dfff;
+    border: 1px solid #287ba5;
+    border-radius: 10px;
+
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.close-lightbox:hover {
+    background: #173b59;
+    color: #ffac45;
+}
+
+.close-lightbox:focus-visible,
+.skill-image-item img:focus-visible {
+    outline: 3px solid #ffac45;
+    outline-offset: 4px;
+}
+
+/* Make skill images interactive */
+.skill-image-item img {
+    cursor: zoom-in;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .image-lightbox {
+        padding: 70px 12px 20px;
+    }
+
+    #lightbox-image {
+        max-width: 100%;
+        max-height: 70vh;
+    }
+
+    .close-lightbox {
+        right: 15px;
+    }
+}
+
