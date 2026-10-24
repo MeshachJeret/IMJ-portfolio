@@ -1074,3 +1074,20 @@ header nav .nav-links a {
     }
 }
 
+
+/* Skill details positioned below selected grid row */
+
+.skills-grid > .skill-details {
+    grid-column: 1 / -1;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
