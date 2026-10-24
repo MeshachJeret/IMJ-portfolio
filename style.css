@@ -540,3 +540,56 @@ html {
     height: fit-content;
 }
 
+
+/* Rocket back-to-top button */
+#back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 200;
+
+    background: #101e35;
+    color: #65dfff;
+    border: 2px solid #65dfff;
+    border-radius: 50%;
+
+    width: 55px;
+    height: 55px;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    box-shadow: 0 0 15px rgba(101, 223, 255, 0.3);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s,
+                visibility 0.3s;
+}
+
+/* Visible when scrolling */
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+#back-to-top:hover {
+    background: #137da6;
+    transform: translateY(-5px);
+}
+
+#back-to-top:focus-visible {
+    outline: 3px solid #ffac45;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #back-to-top {
+        transition: none;
+    }
+
+    #back-to-top:hover {
+        transform: none;
+    }
+}
