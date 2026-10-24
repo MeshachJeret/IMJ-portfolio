@@ -81,6 +81,7 @@ nav a:focus-visible {
     outline-offset: 3px;
 }
 
+
 /* Small screens */
 @media (max-width: 600px) {
     header {
@@ -88,15 +89,16 @@ nav a:focus-visible {
     }
 
     nav {
-        justify-content: center;
+        justify-content: space-between;
     }
 
     nav a:first-child {
-        width: 100%;
-        text-align: center;
+        width: auto;
+        text-align: left;
         margin-right: 0;
     }
 }
+
 
 /* Space-blue headings */
 h1, h2 {
