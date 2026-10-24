@@ -222,3 +222,48 @@ if (entry.isIntersecting) {
 
 }
 
+
+/* Scroll progress indicator */
+
+const scrollProgress = document.getElementById("scroll-progress");
+
+if (scrollProgress) {
+
+    function updateScrollProgress() {
+
+        const scrollTop = window.scrollY;
+
+        const documentHeight =
+            document.documentElement.scrollHeight -
+            window.innerHeight;
+
+        let progress = 0;
+
+        if (documentHeight > 0) {
+            progress = (scrollTop / documentHeight) * 100;
+        }
+
+        progress = Math.min(100, Math.max(0, progress));
+
+        scrollProgress.style.width = progress + "%";
+
+        scrollProgress.setAttribute(
+            "aria-valuenow",
+            String(Math.round(progress))
+        );
+    }
+
+    window.addEventListener(
+        "scroll",
+        updateScrollProgress,
+        { passive: true }
+    );
+
+    window.addEventListener(
+        "resize",
+        updateScrollProgress
+    );
+
+    updateScrollProgress();
+}
+
