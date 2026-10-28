@@ -449,9 +449,71 @@
                     <span>SSH</span>
                 </div>
 
-                <button class="project-details-btn" type="button">
-                    View Details
-                </button>
+                
+<button class="project-details-btn"
+        type="button"
+        aria-expanded="false"
+        aria-controls="homeserver-details">
+    View Details
+</button>
+
+<div id="homeserver-details" class="project-extra" hidden>
+
+    <h4>About This Project</h4>
+    <p>
+        I am building a personal home server using Debian 13
+        (Trixie) on an older desktop computer. The goal is
+        to create my own file storage, synchronisation,
+        archiving, and backup environment while gaining
+        practical experience in Linux system administration.
+    </p>
+
+    <h4>Hardware and Software</h4>
+    <ul>
+        <li>Intel Core i3-3220 processor with 4GB RAM.</li>
+        <li>Two 500GB hard disk drives.</li>
+        <li>Debian 13 (Trixie).</li>
+        <li>Syncthing for file synchronisation.</li>
+        <li>SSH for remote administration.</li>
+        <li>ext4 filesystem for the storage drive.</li>
+    </ul>
+
+    <h4>Development Progress</h4>
+    <ul>
+        <li>
+            Layer 1 - Sync: Completed. Configured Syncthing
+            between the Debian server and my Windows laptop,
+            and successfully tested file transfers.
+        </li>
+        <li>
+            Layer 2 - Archive: Planned for organising and
+            preserving files separately from synchronised data.
+        </li>
+        <li>
+            Layer 3 - Backups: Planned for maintaining
+            additional copies of important files.
+        </li>
+    </ul>
+
+    <h4>What I Learned</h4>
+    <p>
+        Through this ongoing project, I have gained hands-on
+        experience in Linux storage management, mounting
+        hard drives, configuring filesystems, setting up SSH,
+        and synchronising files across devices.
+    </p>
+
+    <h4>Current Status</h4>
+    <p>
+        The file synchronisation layer is operational.
+        The archive and backup layers are the next stages
+        of development.
+    </p>
+
+</div>
+
+
+                
             </div>
         </article>
 
