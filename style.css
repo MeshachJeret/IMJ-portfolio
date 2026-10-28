@@ -1333,3 +1333,19 @@ header nav .nav-links a {
     }
 }
 
+
+/* Two images for Blender project */
+
+.blender-project-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4px;
+}
+
+.blender-project-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-width: 0;
+}
+
