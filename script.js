@@ -714,48 +714,7 @@ projectButtons.forEach(function(button) {
 });
 
 
-/* =====================================
-   PROJECT DETAILS TOGGLE
-   ===================================== */
 
-const projectButtons = document.querySelectorAll(
-    ".project-details-btn"
-);
-
-projectButtons.forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        const detailsId = button.getAttribute(
-            "aria-controls"
-        );
-
-        if (!detailsId) {
-            return;
-        }
-
-        const details = document.getElementById(
-            detailsId
-        );
-
-        if (!details) {
-            return;
-        }
-
-        const isOpening = details.hidden;
-
-        details.hidden = !isOpening;
-
-        button.setAttribute(
-            "aria-expanded",
-            String(isOpening)
-        );
-
-        button.textContent = isOpening
-            ? "Close Details"
-            : "View Details";
-
-    });
 
 });
 
