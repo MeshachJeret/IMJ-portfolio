@@ -716,5 +716,3 @@ projectButtons.forEach(function(button) {
 
 
 
-});
-
