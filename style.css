@@ -1408,3 +1408,7 @@ header nav .nav-links a {
     outline: 3px solid #65dfff;
     outline-offset: 3px;
 }
+
+.projects-grid {
+    align-items: start;
+}
