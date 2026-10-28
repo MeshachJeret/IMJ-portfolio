@@ -1349,3 +1349,62 @@ header nav .nav-links a {
     min-width: 0;
 }
 
+
+/* =====================================
+   EXPANDABLE PROJECT DETAILS
+   ===================================== */
+
+.project-extra {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #287ba5;
+}
+
+.project-extra[hidden] {
+    display: none;
+}
+
+.project-extra h4 {
+    color: #65dfff;
+    margin: 18px 0 10px;
+}
+
+.project-extra p {
+    line-height: 1.8;
+}
+
+.project-extra ul {
+    padding-left: 20px;
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+.project-extra li {
+    margin-bottom: 6px;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.project-links a {
+    color: #ffac45;
+    border: 1px solid #ffac45;
+    border-radius: 8px;
+    padding: 9px 12px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.project-links a:hover {
+    background: #ffac45;
+    color: #081426;
+}
+
+.project-links a:focus-visible {
+    outline: 3px solid #65dfff;
+    outline-offset: 3px;
+}
