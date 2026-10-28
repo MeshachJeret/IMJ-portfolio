@@ -1412,3 +1412,24 @@ header nav .nav-links a {
 .projects-grid {
     align-items: start;
 }
+
+
+/* Round Robin placeholder - compact design */
+.project-image.project-placeholder {
+    height: 120px;
+}
+
+.project-placeholder span {
+    font-size: 2.8rem;
+}
+
+/* Smaller on mobile */
+@media (max-width: 768px) {
+    .project-image.project-placeholder {
+        height: 90px;
+    }
+
+    .project-placeholder span {
+        font-size: 2.2rem;
+    }
+}
