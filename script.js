@@ -181,7 +181,7 @@ updateActiveSection();
 /* Scroll reveal animation */
 
 const revealElements = document.querySelectorAll(
-    "#about, .skill-card, .journey-item, .contact-info, .contact-form-box"
+    "#about, .skill-card, .project-card, .journey-item, .contact-info, .contact-form-box"
 );
 
 if ("IntersectionObserver" in window) {
