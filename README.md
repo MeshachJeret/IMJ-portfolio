@@ -45,9 +45,8 @@ My objectives included:
 | HTML5 | Website structure and content |
 | CSS3 | Styling, layout, responsiveness, and animations |
 | JavaScript | Interactive elements and user interactions |
-| Git | Version control |
 | GitHub | Source code hosting and project documentation |
-| VS Code / VSCodium | Code editing and development |
+| VS Code | Code editing and development |
 
 The website was developed without frontend frameworks such as React, Vue, or Angular.
 
